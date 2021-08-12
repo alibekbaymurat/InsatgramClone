@@ -75,9 +75,11 @@ public class PostActivity extends AppCompatActivity {
         pd.setMessage("Uploading");
         pd.show();
 
+
+
         if (imageUri != null){
-            StorageReference filePth = FirebaseStorage.getInstance().getReference("Posts").child(System.currentTimeMillis() + "." + getFileExtension(imageUri));
-            StorageTask uploadTask = filePth.putFile(imageUri);
+            StorageReference filePath = FirebaseStorage.getInstance().getReference("Posts").child(System.currentTimeMillis() + "." + getFileExtension(imageUri));
+            StorageTask uploadTask = filePath.putFile(imageUri);
             uploadTask.continueWithTask(new Continuation() {
                 @Override
                 public Object then(@NonNull Task task) throws Exception {
@@ -85,7 +87,7 @@ public class PostActivity extends AppCompatActivity {
                         throw task.getException();
                     }
 
-                    return filePth.getDownloadUrl();
+                    return filePath.getDownloadUrl();
                 }
             }).addOnCompleteListener(new OnCompleteListener<Uri>() {
                 @Override
@@ -134,7 +136,6 @@ public class PostActivity extends AppCompatActivity {
     }
 
     private String getFileExtension(Uri uri) {
-
         return MimeTypeMap.getSingleton().getExtensionFromMimeType(this.getContentResolver().getType(uri));
     }
 
