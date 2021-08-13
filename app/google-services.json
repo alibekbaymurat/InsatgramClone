@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "721351534762",
+    "firebase_url": "https://instagram-clone-b5632-default-rtdb.firebaseio.com",
     "project_id": "instagram-clone-b5632",
     "storage_bucket": "instagram-clone-b5632.appspot.com"
   },
@@ -13,6 +14,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "721351534762-hvrth3iv64gu957n5jv1ggm41prg05e4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.alibekproject.insatgramclone",
+            "certificate_hash": "98091e18bf7f9779477aae224c4f4a1a57052469"
+          }
+        },
         {
           "client_id": "721351534762-3p1dek7qo8bntclf9mg1cv9n78p6lccf.apps.googleusercontent.com",
           "client_type": 3
