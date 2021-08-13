@@ -75,8 +75,6 @@ public class PostActivity extends AppCompatActivity {
         pd.setMessage("Uploading");
         pd.show();
 
-
-
         if (imageUri != null){
             StorageReference filePath = FirebaseStorage.getInstance().getReference("Posts").child(System.currentTimeMillis() + "." + getFileExtension(imageUri));
             StorageTask uploadTask = filePath.putFile(imageUri);
